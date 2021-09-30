@@ -2,7 +2,7 @@
 const cardURL = "http://deckofcardsapi.com/api/deck/new/draw/?count=3";
 
 // Call and use pre-existing HTML elements (div)
-let cardContainer = document.querySelector(".cardContainer");
+let cardContainer = document.querySelector("#cardContainer");
 
 // Fetch to grab data from API
 fetch(cardURL)
@@ -17,21 +17,24 @@ let apiDataDisplay = (jsonDataObject) => {
 
     // Declaring new variable to understand object content
     let cards = jsonDataObject.cards;
+    console.log(cards);
 
-    // Declaring and creating needed Bootstrap column to hold card
-    let bootstrapCol = document.createElement("div").className("col");
-
-    // Declaring the Bootstrap card & populating with API data for each playing card in card array using .forEach() 
-    let bootstrapCard;
-
+    // Declaring the Bootstrap column div and card to populate with API data for each playing card in card array using .forEach() 
     cards.forEach(card => {
+        //console.log(card);
+
+        // Declaring and creating needed Bootstrap column to hold card
+        let bootstrapCol = document.createElement("div");
+        bootstrapCol.className = "col";
+
+
+        let bootstrapCard = document.createElement("div");
+        bootstrapCard.className = "card";
+
         bootstrapCard.innerHTML = `
-            <div class="card">
-                <img src="${card.image}" class="card-img-top" alt="A playing card that is the ${card.value} of ${card.suit.toLowerCase()}.">
-            </div>
+            <img src="${card.image}" class="card-img-top" alt="A playing card that is the ${card.value} of ${card.suit.toLowerCase()}.">
         `;
         bootstrapCol.appendChild(bootstrapCard);
         cardContainer.appendChild(bootstrapCol);
     });
-
 }

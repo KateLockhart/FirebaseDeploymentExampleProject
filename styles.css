@@ -7,3 +7,24 @@ body {
     background-position: center;
 }
 
+#cardContainer {
+
+}
+
+#footer {
+    width: 100vw;
+    height: 8vh;
+    background-color: rgba(255, 255, 255, 0.349);
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    padding-top: 2.5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#footerText {
+    margin-left: -4vw;
+    margin-right: 5vw;
+}
