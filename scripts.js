@@ -1,5 +1,5 @@
 // API URL
-const cardURL = "http://deckofcardsapi.com/api/deck/new/draw/?count=3";
+const cardURL = "https://deckofcardsapi.com/api/deck/new/draw/?count=3";
 
 // Call and use pre-existing HTML elements (div)
 let cardContainer = document.querySelector("#cardContainer");
