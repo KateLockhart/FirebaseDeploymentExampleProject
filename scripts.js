@@ -38,3 +38,5 @@ let apiDataDisplay = (jsonDataObject) => {
         cardContainer.appendChild(bootstrapCol);
     });
 }
+
+fetch();
